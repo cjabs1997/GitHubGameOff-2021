@@ -4,7 +4,7 @@ using UnityEngine;
 public class Bug : ScriptableObject
 {    
     public float health = 1f;
-    public HitBehavior onHit(){ 
+    public void onHit(){ 
         health -= 1;
     }
     public BugBehavior behavior;
