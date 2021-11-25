@@ -90,7 +90,7 @@ ScriptedImporter:
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData:
-  - name: Layer 4
+  - name: Fly_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -112,7 +112,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 1}
-  - name: Layer 3
+  - name: Fly_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -134,7 +134,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 132}
-  - name: Layer 2
+  - name: Fly_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
