@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Alive Bugs
   m_EditorClassIdentifier: 
   Items: []
+  EmptyEvent: {fileID: 11400000, guid: fa9b8a841fa7ab14f9329a1b07bb0320, type: 2}
