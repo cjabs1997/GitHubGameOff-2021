@@ -24,7 +24,7 @@ public class Bug : MonoBehaviour
     }
     private void Start()
     {
-        
+        target = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
@@ -44,10 +44,10 @@ public class Bug : MonoBehaviour
         // Used to determine desired acceleration for the PD force application
         prevVelocity = m_Rigidbody2D.velocity;
 
-        Debug.Log("SPEED: " + m_Rigidbody2D.velocity.magnitude);
-        Debug.Log("STEERING: " + steering);
-        Debug.Log("DESIRED VELOCITY: " + desiredVel);
-        Debug.Log("FORCE TO ADD: " + forceToAdd);
+        //Debug.Log("SPEED: " + m_Rigidbody2D.velocity.magnitude);
+        //Debug.Log("STEERING: " + steering);
+        //Debug.Log("DESIRED VELOCITY: " + desiredVel);
+        //Debug.Log("FORCE TO ADD: " + forceToAdd);
 
         m_Rigidbody2D.AddForce(forceToAdd, ForceMode2D.Force);
     }

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ee188d82643674cbd3a41ec3b645d8, type: 3}
   m_Name: Fly
   m_EditorClassIdentifier: 
-  steeringBehavior: {fileID: 11400000, guid: 881ddc88f870e7b4bade9390be890788, type: 2}
-  steeringBehavior2: {fileID: 11400000, guid: da04d64d96a134042b61935615334285, type: 2}
+  steeringBehaviors:
+  - {fileID: 11400000, guid: da04d64d96a134042b61935615334285, type: 2}
+  - {fileID: 11400000, guid: 881ddc88f870e7b4bade9390be890788, type: 2}
   maxSpeed: 6
   maxSteer: 50
   maxMoveForce: 50
