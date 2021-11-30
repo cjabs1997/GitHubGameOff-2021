@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42ee188d82643674cbd3a41ec3b645d8, type: 3}
-  m_Name: Fly
+  m_Script: {fileID: 11500000, guid: 7ca9dc60aebe2d045ba8f008c9c17712, type: 3}
+  m_Name: FlyWander
   m_EditorClassIdentifier: 
-  steeringBehavior: {fileID: 11400000, guid: 881ddc88f870e7b4bade9390be890788, type: 2}
-  maxSpeed: 6
-  maxSteer: 50
-  maxMoveForce: 50
-  PD_kp: 0.95
-  PD_kd: 0.0012
+  circleDistance: 1
+  circleRadius: 5
+  angleChange: 1
+  randomRange: 1

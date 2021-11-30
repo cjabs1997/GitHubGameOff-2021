@@ -7,14 +7,20 @@ public class Bug : MonoBehaviour
     [SerializeField] private float health;
     [SerializeField] private BugBehavior behavior;
 
-    [SerializeField] private Transform goal; // What the bug is heading towards, implemenation tbd.
+    [SerializeField] private GameObject target; // What the bug is heading towards, implemenation tbd.
     // For now setting as Serialized so I can manually set for testing.
 
+    private Vector2 prevVelocity;
+
+
     private Rigidbody2D m_Rigidbody2D;
+    public Rigidbody2D Rigidbody2D { get { return m_Rigidbody2D; } }
 
     private void Awake()
     {
         m_Rigidbody2D = this.GetComponent<Rigidbody2D>();
+
+        prevVelocity = Vector2.zero;
     }
     private void Start()
     {
@@ -29,7 +35,21 @@ public class Bug : MonoBehaviour
     // Where steering behavior stuff will happen, scuffed for now
     private void FixedUpdate()
     {
-        m_Rigidbody2D.velocity = (goal.position - this.transform.position).normalized * 2; 
+        Vector2 steering = behavior.CalculateSteeringForce(this, target);
+        Vector2 desiredVel = Vector2.ClampMagnitude(m_Rigidbody2D.velocity + steering, behavior.MaxSpeed);
+        Vector2 forceToAdd = -behavior.kp * (m_Rigidbody2D.velocity - desiredVel) - behavior.kd * (((m_Rigidbody2D.velocity - prevVelocity) / Time.deltaTime) - steering);
+
+        forceToAdd = Vector2.ClampMagnitude(forceToAdd, behavior.MaxMoveForce);
+
+        // Used to determine desired acceleration for the PD force application
+        prevVelocity = m_Rigidbody2D.velocity;
+
+        Debug.Log("SPEED: " + m_Rigidbody2D.velocity.magnitude);
+        Debug.Log("STEERING: " + steering);
+        Debug.Log("DESIRED VELOCITY: " + desiredVel);
+        Debug.Log("FORCE TO ADD: " + forceToAdd);
+
+        m_Rigidbody2D.AddForce(forceToAdd, ForceMode2D.Force);
     }
 
     // This is a pretty basic implementation from this. Can adjust this from a design standpoint and figure it out from there.
@@ -49,6 +69,6 @@ public class Bug : MonoBehaviour
     {
         // Have the player lose a health or something, probably also kill the bug
         Debug.Log("PLAYER HIT!");
-        Destroy(this.gameObject); // Should probably reference something in the behavior instead? This works for the concept tho
+        //Destroy(this.gameObject); // Should probably reference something in the behavior instead? This works for the concept tho
     }
 }
