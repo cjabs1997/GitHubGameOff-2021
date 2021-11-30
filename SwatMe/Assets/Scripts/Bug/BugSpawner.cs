@@ -28,6 +28,11 @@ public class BugSpawner : MonoBehaviour
         
     }
 
+    public void WaveComplete()
+    {
+        Debug.Log("YOU DID IT!");
+    }
+
     IEnumerator SpawnWave()
     {
         int axis = 0;

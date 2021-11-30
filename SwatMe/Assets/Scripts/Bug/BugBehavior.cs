@@ -31,7 +31,6 @@ public class BugBehavior : ScriptableObject
 
     public void Die(Bug bug)
     {
-        Debug.Log("Butts.");
         Destroy(bug.gameObject);
     }
 

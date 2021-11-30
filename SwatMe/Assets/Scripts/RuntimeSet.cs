@@ -4,9 +4,7 @@ using UnityEngine;
 
 public abstract class RuntimeSet<T> : ScriptableObject
 {
-    public List<T> Items = new List<T>();
-
-    protected bool enabled;
+    [SerializeField] protected List<T> Items = new List<T>();
 
     public void Add(T thing)
     {
@@ -14,15 +12,10 @@ public abstract class RuntimeSet<T> : ScriptableObject
             Items.Add(thing);
     }
 
-    public void Remove(T thing)
+    public virtual void Remove(T thing)
     {
         if (Items.Contains(thing))
             Items.Remove(thing);
-
-        if(Items.Count == 0 && enabled)
-        {
-            Debug.Log("NO SEE PLZ");
-        }
     }
 
     private void OnDisable()

@@ -12,4 +12,16 @@ using UnityEngine;
 [CreateAssetMenu]
 public class BugRuntimeSet : RuntimeSet<Bug>
 {
+    [Tooltip("Event to raise when the list is empty.")]
+    [SerializeField] private GameEvent EmptyEvent;
+
+    public override void Remove(Bug thing)
+    {
+        base.Remove(thing);
+
+        if(Items.Count == 0)
+        {
+            EmptyEvent.Raise();
+        }
+    }
 }

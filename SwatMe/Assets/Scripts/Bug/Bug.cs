@@ -78,4 +78,9 @@ public class Bug : MonoBehaviour
     {
         wanderAngle += Random.Range(-randomRange, randomRange) * angleChange - angleChange * 0.5f;
     }
+
+    private void OnDestroy()
+    {
+        bugSet.Remove(this);
+    }
 }
