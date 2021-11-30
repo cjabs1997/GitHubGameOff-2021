@@ -11,7 +11,7 @@ public class Bug : MonoBehaviour
     // For now setting as Serialized so I can manually set for testing.
 
     private Vector2 prevVelocity;
-
+    public float wanderAngle { get; set; } = 0f; // This is pretty gross but I can't think of a better implementation right now
 
     private Rigidbody2D m_Rigidbody2D;
     public Rigidbody2D Rigidbody2D { get { return m_Rigidbody2D; } }
@@ -70,5 +70,10 @@ public class Bug : MonoBehaviour
         // Have the player lose a health or something, probably also kill the bug
         Debug.Log("PLAYER HIT!");
         //Destroy(this.gameObject); // Should probably reference something in the behavior instead? This works for the concept tho
+    }
+
+    public void UpdateWanderAngle(float randomRange, float angleChange)
+    {
+        wanderAngle += Random.Range(-randomRange, randomRange) * angleChange - angleChange * 0.5f;
     }
 }

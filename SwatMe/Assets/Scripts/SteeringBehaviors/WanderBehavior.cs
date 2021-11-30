@@ -6,7 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "WanderBehavior", menuName = "SteeringBehavior/WanderBehavior")]
 public class WanderBehavior : SteeringBehavior
 {
+    [Tooltip("Influences how big of an impact the behavior will have on the object. Larger values = larger effect.")]
     [SerializeField] private float circleDistance;
+    [Tooltip("Influences how big of an impact the behavior will have on the object. Larger values = larger effect.")]
     [SerializeField] private float circleRadius;
     [Tooltip("Affects how much the wander angle can change each tick.")]
     [SerializeField] private float angleChange;
@@ -16,16 +18,14 @@ public class WanderBehavior : SteeringBehavior
 
     public override Vector2 ForceToAdd(Bug bug, BugBehavior behavior, GameObject target)
     {
-        float wanderAngle = Mathf.Atan2(bug.Rigidbody2D.velocity.y, bug.Rigidbody2D.velocity.x);
-        wanderAngle += Random.Range(-randomRange, randomRange) * angleChange - angleChange;
-
-
+        bug.UpdateWanderAngle(randomRange, angleChange);
+        
         Vector2 circleCenter = bug.Rigidbody2D.velocity.normalized * circleDistance;
         Vector2 displacementForce = Vector2.right * circleRadius;
 
         float displacementMag = displacementForce.magnitude;
 
-        displacementForce = new Vector2(Mathf.Cos(wanderAngle) * displacementMag, Mathf.Sin(wanderAngle) * displacementMag);
+        displacementForce = new Vector2(Mathf.Cos(bug.wanderAngle) * displacementMag, Mathf.Sin(bug.wanderAngle) * displacementMag);
 
         Vector2 steering = circleCenter + displacementForce;
 

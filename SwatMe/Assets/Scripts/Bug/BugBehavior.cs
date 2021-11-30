@@ -8,7 +8,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="Behavior")]
 public class BugBehavior : ScriptableObject
 {
-    [SerializeField] private SteeringBehavior steeringBehavior;
+    [SerializeField] private System.Collections.Generic.List<SteeringBehavior> steeringBehaviors; // FUCK IMPORTING
 
     [Tooltip("The maximum speed the object can reach while using this behavior.")]
     [SerializeField] protected float maxSpeed;
@@ -51,7 +51,11 @@ public class BugBehavior : ScriptableObject
         // This looks a little silly but the strength of these behaviors is that we can add them together to get more complex
         // movement patterns. Hence the weirdness.
         Vector2 steering = Vector2.zero;
-        steering += steeringBehavior.ForceToAdd(bug, this, target);
+
+        foreach(SteeringBehavior s in steeringBehaviors)
+        {
+            steering += s.ForceToAdd(bug, this, target);
+        }
 
         steering = Vector2.ClampMagnitude(steering, maxMoveForce);
         return steering;

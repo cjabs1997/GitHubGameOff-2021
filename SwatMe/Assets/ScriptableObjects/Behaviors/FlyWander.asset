@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: FlyWander
   m_EditorClassIdentifier: 
   circleDistance: 1
-  circleRadius: 5
-  angleChange: 1
+  circleRadius: 6
+  angleChange: 0.5
   randomRange: 1
