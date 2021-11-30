@@ -6,9 +6,9 @@ public class Bug : MonoBehaviour
 {
     [SerializeField] private float health;
     [SerializeField] private BugBehavior behavior;
+    [SerializeField] private BugRuntimeSet bugSet;
 
-    [SerializeField] private GameObject target; // What the bug is heading towards, implemenation tbd.
-    // For now setting as Serialized so I can manually set for testing.
+    private GameObject target; // What the bug is heading towards, implemenation tbd.
 
     private Vector2 prevVelocity;
     public float wanderAngle { get; set; } = 0f; // This is pretty gross but I can't think of a better implementation right now
@@ -21,10 +21,12 @@ public class Bug : MonoBehaviour
         m_Rigidbody2D = this.GetComponent<Rigidbody2D>();
 
         prevVelocity = Vector2.zero;
+        target = GameObject.FindGameObjectWithTag("Player");
+        bugSet.Add(this);
     }
     private void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     private void Update()
