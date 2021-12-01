@@ -758,7 +758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpawnBound: 40
   ySpawnBound: 25
-  wave: {fileID: 11400000, guid: 7ab38eca51b6a594d9989f2d245ae942, type: 2}
+  waves: []
 --- !u!4 &1927752454
 Transform:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class BugSpawner : MonoBehaviour
     [Tooltip("The positive and negative of this value are used to determing where objects spawn on the y-axis.")]
     [SerializeField] int ySpawnBound;
 
-    public Wave wave;
+    [SerializeField] List<Wave> waves;
 
     private List<int> axes = new List<int>();
 
@@ -38,24 +38,27 @@ public class BugSpawner : MonoBehaviour
         int axis = 0;
         Vector2 spawnPos = Vector2.zero;
 
-        foreach(Vector2 v in wave.SpawnList)
+        foreach(Wave w in waves)
         {
-            for(int i = 0; i < v.y; i++)
+            foreach (Vector2 v in w.SpawnList)
             {
-                axis = i % 4;
-
-                if (axis <= 1) // Constant x, vary the y
+                for (int i = 0; i < v.y; i++)
                 {
-                    spawnPos = new Vector2(axes[axis], Random.Range(axes[3], axes[2]));
-                    Instantiate(wave.BugsUsed[(int)v.x], spawnPos, Quaternion.identity);
-                }
-                else // Vary the x, constant y
-                {
-                    spawnPos = new Vector2(Random.Range(axes[1], axes[0]), axes[axis]);
-                    Instantiate(wave.BugsUsed[(int)v.x], spawnPos, Quaternion.identity);
-                }
+                    axis = i % 4;
 
-                yield return new WaitForSeconds(1);
+                    if (axis <= 1) // Constant x, vary the y
+                    {
+                        spawnPos = new Vector2(axes[axis], Random.Range(axes[3], axes[2]));
+                        Instantiate(w.BugsUsed[(int)v.x], spawnPos, Quaternion.identity);
+                    }
+                    else // Vary the x, constant y
+                    {
+                        spawnPos = new Vector2(Random.Range(axes[1], axes[0]), axes[axis]);
+                        Instantiate(w.BugsUsed[(int)v.x], spawnPos, Quaternion.identity);
+                    }
+
+                    yield return new WaitForSeconds(w.SpawnInterval);
+                }
             }
         }
     }

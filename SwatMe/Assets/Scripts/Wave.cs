@@ -7,6 +7,7 @@ public class Wave : ScriptableObject
 {
     [Tooltip("At what interval the spawner will spawn the bugs.")]
     [SerializeField] protected float spawnInterval = 1f;
+    public float SpawnInterval { get { return spawnInterval; } }
 
     [Tooltip("The x value represents what bug to spawn, index of the bugsUsed list. The y value is the quantity. Presently it will " +
         "spawn in the order listed here. Can probs change that later...")]
