@@ -1,7 +1,16 @@
 fileFormatVersion: 2
 guid: 9a6cbfd99c42b7542ace6b5e55c60690
 ScriptedImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2452881039369310721
+    second: fly1_0
+  - first:
+      213: 1787832857094175650
+    second: fly1_1
+  - first:
+      213: -6662463804125209427
+    second: fly1_2
   externalObjects: {}
   serializedVersion: 2
   userData: 
@@ -91,18 +100,18 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Layer 3
+  - name: fly1_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 4
-      width: 3796
-      height: 2453
-    spriteID: a7b1fa0561c06fa41a7d817fcd206a79
+      x: 0
+      y: 0
+      width: 1878
+      height: 1482
+    spriteID: ffde91cc0bd95fdd0800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -112,19 +121,19 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 4}
-  - name: Layer 2
+    uvTransform: {x: 0, y: 0}
+  - name: fly1_1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1883
-      y: 4
-      width: 2844
-      height: 2453
-    spriteID: 5b7d033b2df52bd40b8bc2584433a258
+      x: 1365
+      y: 3
+      width: 1365
+      height: 1456
+    spriteID: 2abbedcd288afc810800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -134,19 +143,19 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1740, y: 4}
-  - name: Layer 1
+    uvTransform: {x: 1365, y: 3}
+  - name: fly1_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 1492
-      width: 1472
-      height: 2453
-    spriteID: 77d9977e1b1eb304594686ea8e4ae550
+      x: 2730
+      y: 0
+      width: 1365.3334
+      height: 4096
+    spriteID: dac183a287c2a83a0800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -156,7 +165,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -497, y: 1492}
+    uvTransform: {x: 2730, y: 0}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}

@@ -7,6 +7,10 @@ public class Bug : MonoBehaviour
     [SerializeField] private float health;
     [SerializeField] private BugBehavior behavior;
     [SerializeField] private BugRuntimeSet bugSet;
+    [SerializeField] private SimpleAudioEvent buzzSFX;
+    [SerializeField] private GameObject deathEffects;
+    [SerializeField] private GameObject landEffects;
+
 
     private GameObject target; // What the bug is heading towards, implemenation tbd.
 
@@ -16,9 +20,12 @@ public class Bug : MonoBehaviour
     private Rigidbody2D m_Rigidbody2D;
     public Rigidbody2D Rigidbody2D { get { return m_Rigidbody2D; } }
 
+    private AudioSource m_AudioSource;
+
     private void Awake()
     {
         m_Rigidbody2D = this.GetComponent<Rigidbody2D>();
+        m_AudioSource = this.GetComponent<AudioSource>();
 
         prevVelocity = Vector2.zero;
         target = GameObject.FindGameObjectWithTag("Player");
@@ -26,7 +33,7 @@ public class Bug : MonoBehaviour
     }
     private void Start()
     {
-        
+        buzzSFX.Play(m_AudioSource);   
     }
 
     private void Update()
@@ -63,6 +70,7 @@ public class Bug : MonoBehaviour
         if (health <= 0)
         {
             //this.handleDeath();
+            Instantiate(deathEffects, this.transform.position, Quaternion.identity);
             behavior.Die(this);
         }
     }
