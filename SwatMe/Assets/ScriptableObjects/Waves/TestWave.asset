@@ -16,4 +16,4 @@ MonoBehaviour:
   spawnList:
   - {x: 0, y: 5}
   bugsUsed:
-  - {fileID: 1495640194911350364, guid: b49e9c5b6651d62498fc2588c73ce51c, type: 3}
+  - {fileID: 1495640194911350364, guid: cf24c4d9dc8d2d042a668492dab1e07c, type: 3}
