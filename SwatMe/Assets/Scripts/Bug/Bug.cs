@@ -13,6 +13,7 @@ public class Bug : MonoBehaviour
 
 
     private GameObject target; // What the bug is heading towards, implemenation tbd.
+    private int spriteIndex;
 
     private Vector2 prevVelocity;
     public float wanderAngle { get; set; } = 0f; // This is pretty gross but I can't think of a better implementation right now
@@ -21,19 +22,25 @@ public class Bug : MonoBehaviour
     public Rigidbody2D Rigidbody2D { get { return m_Rigidbody2D; } }
 
     private AudioSource m_AudioSource;
+    private Animator m_Animator;
 
     private void Awake()
     {
         m_Rigidbody2D = this.GetComponent<Rigidbody2D>();
         m_AudioSource = this.GetComponent<AudioSource>();
+        m_Animator = this.GetComponentInChildren<Animator>();
 
         prevVelocity = Vector2.zero;
         target = GameObject.FindGameObjectWithTag("Player");
         bugSet.Add(this);
+        spriteIndex = Random.Range(0, 3);
     }
     private void Start()
     {
-        buzzSFX.Play(m_AudioSource);   
+        buzzSFX.Play(m_AudioSource);
+
+        Debug.Log(spriteIndex);
+        m_Animator.SetInteger("fly_enum", spriteIndex);
     }
 
     private void Update()
