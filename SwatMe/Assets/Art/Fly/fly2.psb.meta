@@ -112,7 +112,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: -196}
+    uvTransform: {x: 4, y: -76}
   - name: Layer 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -121,7 +121,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4458
+      y: 1782
       width: 2606
       height: 2195
     spriteID: b488dcea32050af4fb35016c3ba59346
@@ -134,7 +134,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -473, y: 4334}
+    uvTransform: {x: -186, y: 1733}
   - name: Layer 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -143,7 +143,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 2131
+      y: 853
       width: 2606
       height: 2319
     spriteID: 476ef9115035ede42b0ede2b3076a203
@@ -156,7 +156,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -473, y: 2131}
+    uvTransform: {x: -185, y: 853}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
@@ -164,13 +164,13 @@ ScriptedImporter:
   importHiddenLayers: 0
   importedTextureWidth: 1024
   importedTextureHeight: 2048
-  documentSize: {x: 3448, y: 2319}
+  documentSize: {x: 1369, y: 921}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
     categories: []
-  textureActualWidth: 4096
-  textureActualHeight: 8192
+  textureActualWidth: 2048
+  textureActualHeight: 4096
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 1
@@ -189,14 +189,14 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: b488dcea32050af4fb35016c3ba59346
     layerID: 2
-    mosaicPosition: {x: 4, y: 4458}
+    mosaicPosition: {x: 4, y: 1782}
   - name: Layer 1
     spriteName: Layer 1
     isGroup: 0
     parentIndex: -1
     spriteID: 476ef9115035ede42b0ede2b3076a203
     layerID: 5
-    mosaicPosition: {x: 4, y: 2131}
+    mosaicPosition: {x: 4, y: 853}
   characterData:
     bones: []
     parts: []
