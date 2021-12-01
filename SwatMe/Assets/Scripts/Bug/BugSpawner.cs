@@ -11,6 +11,9 @@ public class BugSpawner : MonoBehaviour
 
     [SerializeField] List<Wave> waves;
 
+    [Tooltip("Event raised when all waves are completed.")]
+    [SerializeField] GameEvent WinEvent;
+
     private List<int> axes = new List<int>();
 
     void Start()
@@ -26,11 +29,6 @@ public class BugSpawner : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void WaveComplete()
-    {
-        Debug.Log("YOU DID IT!");
     }
 
     IEnumerator SpawnWave()
@@ -61,6 +59,8 @@ public class BugSpawner : MonoBehaviour
                 }
             }
         }
+
+        WinEvent.Raise(); // This could probably be better :)
     }
 
     void OnDrawGizmosSelected()
