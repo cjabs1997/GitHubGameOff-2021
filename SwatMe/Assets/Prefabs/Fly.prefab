@@ -155,7 +155,7 @@ MonoBehaviour:
   bugSet: {fileID: 11400000, guid: 01be0c1215f2fc543b49832c0e0725f7, type: 2}
   buzzSFX: {fileID: 11400000, guid: 625f04acb3f9da24d9d21fd75811809d, type: 2}
   deathEffects: {fileID: 2976948726586232887, guid: fd778f6ccdcb68045a265ebb48afd634, type: 3}
-  landEffects: {fileID: 0}
+  landEffects: {fileID: 2976948726586232887, guid: 34a291a94de985b4dafefe5465da89ea, type: 3}
 --- !u!61 &1495640194911350338
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -213,7 +213,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 877a9b49eb2dc394991a2e2ff817628f, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.251
   m_Pitch: 1

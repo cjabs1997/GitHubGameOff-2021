@@ -16,6 +16,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 877a9b49eb2dc394991a2e2ff817628f, type: 3}
   - {fileID: 8300000, guid: 6582fd266c123e04aaff4c15411ed388, type: 3}
   minVolume: 0.4
-  maxVolume: 0.8
-  minPitch: 0.8
-  maxPitch: 1.2
+  maxVolume: 0.65
+  minPitch: 0.9
+  maxPitch: 1.4

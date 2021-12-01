@@ -84,6 +84,7 @@ public class Bug : MonoBehaviour
         {
             p.BugHit();
         }
+        Instantiate(landEffects, this.transform.position, Quaternion.identity);
         Destroy(this.gameObject); // Should probably reference something in the behavior instead? This works for the concept tho
     }
 
