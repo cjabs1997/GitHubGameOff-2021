@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+/* Uses the Framework as outlined in Ryan Hipple's 2017 Unite talk.
+*  https://www.youtube.com/watch?v=raQ3iHhE_Kk
+*  https://github.com/roboryantron/Unite2017
+*/
+[CreateAssetMenu]
+public class GameEvent : ScriptableObject
+{
+    /// <summary>
+    /// The list of listeners that this event will notify if it is raised.
+    /// </summary>
+    private readonly List<GameEventListener> eventListeners =
+        new List<GameEventListener>();
+
+    public void Raise()
+    {
+        for (int i = eventListeners.Count - 1; i >= 0; i--)
+            eventListeners[i].OnEventRaised();
+    }
+
+    public void RegisterListener(GameEventListener listener)
+    {
+        if (!eventListeners.Contains(listener))
+            eventListeners.Add(listener);
+    }
+
+    public void UnregisterListener(GameEventListener listener)
+    {
+        if (eventListeners.Contains(listener))
+            eventListeners.Remove(listener);
+    }
+}
