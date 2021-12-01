@@ -71,7 +71,12 @@ public class Bug : MonoBehaviour
     {
         // Have the player lose a health or something, probably also kill the bug
         Debug.Log("PLAYER HIT!");
-        //Destroy(this.gameObject); // Should probably reference something in the behavior instead? This works for the concept tho
+
+        if(collision.gameObject.TryGetComponent<PicnicBasket>(out PicnicBasket p))
+        {
+            p.BugHit();
+        }
+        Destroy(this.gameObject); // Should probably reference something in the behavior instead? This works for the concept tho
     }
 
     public void UpdateWanderAngle(float randomRange, float angleChange)

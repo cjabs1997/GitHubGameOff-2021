@@ -16,6 +16,8 @@ public class BugSpawner : MonoBehaviour
 
     private List<int> axes = new List<int>();
 
+    private bool spawnWave = false;
+
     void Start()
     {
         axes.Add(xSpawnBound/2); // This feels gormless but it works :P
@@ -57,10 +59,23 @@ public class BugSpawner : MonoBehaviour
 
                     yield return new WaitForSeconds(w.SpawnInterval);
                 }
+
+                yield return new WaitUntil(SpawnNext);
+                spawnWave = false;
             }
         }
 
         WinEvent.Raise(); // This could probably be better :)
+    }
+
+    public void SpawnNextWave()
+    {
+        spawnWave = true;
+    }
+
+    private bool SpawnNext()
+    {
+        return spawnWave;
     }
 
     void OnDrawGizmosSelected()

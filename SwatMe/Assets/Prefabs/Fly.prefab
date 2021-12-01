@@ -152,7 +152,6 @@ MonoBehaviour:
   health: 1
   behavior: {fileID: 11400000, guid: 6a307f56177ae67499dea60ac7af3903, type: 2}
   bugSet: {fileID: 11400000, guid: 01be0c1215f2fc543b49832c0e0725f7, type: 2}
-  target: {fileID: 0}
 --- !u!61 &1495640194911350338
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,7 +162,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
