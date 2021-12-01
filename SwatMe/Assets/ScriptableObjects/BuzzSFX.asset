@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84faad14cf4c6443b45b3ee900a87b0, type: 3}
   m_Name: BuzzSFX
   m_EditorClassIdentifier: 
-  clips: []
-  minVolume: 0
-  maxVolume: 0
-  minPitch: 0
-  maxPitch: 0
+  clips:
+  - {fileID: 8300000, guid: 877a9b49eb2dc394991a2e2ff817628f, type: 3}
+  - {fileID: 8300000, guid: 6582fd266c123e04aaff4c15411ed388, type: 3}
+  minVolume: 0.4
+  maxVolume: 0.8
+  minPitch: 0.8
+  maxPitch: 1.2

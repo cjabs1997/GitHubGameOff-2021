@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84faad14cf4c6443b45b3ee900a87b0, type: 3}
   m_Name: LandSFX
   m_EditorClassIdentifier: 
-  clips: []
-  minVolume: 0
-  maxVolume: 0
-  minPitch: 0
-  maxPitch: 0
+  clips:
+  - {fileID: 8300000, guid: 2f177c94c93f8644797a467916ad0016, type: 3}
+  - {fileID: 8300000, guid: 99ce497704e941946b87406513bd4e47, type: 3}
+  minVolume: 0.4
+  maxVolume: 0.8
+  minPitch: 0.8
+  maxPitch: 1.2
